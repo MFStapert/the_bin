@@ -1,0 +1,68 @@
+@import 'variables';
+
+html {
+  font-size: 62.5%; 
+}
+
+body {
+  font-family: $main-font-family;
+  color: $color-dark-grey;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+p {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+strong {
+    font-weight: 600;
+}
+
+a {
+  color: $color-dark-grey;   
+  text-decoration: none;         
+  transition: color .25s ease;
+  &:hover {
+    color: $color-primary;  
+  }
+}
+
+code {
+  background-color: $color-dark-grey;
+  color: white;
+  margin: $size-medium 0;
+  padding: $size-medium;
+  border-radius: 0.3rem;
+  font-weight: 600;
+  font-size: 1.6rem;
+  display: inline-block;
+}
+
+h1 {
+  font-size: 2.4em;
+  font-weight: 600;
+  margin-bottom: $size-small;
+}
+
+h2 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.color-primary {
+    color: $color-primary;
+}
