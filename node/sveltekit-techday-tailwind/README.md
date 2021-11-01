@@ -1,0 +1,1 @@
+Playing around with tailwind, tried to make a clone of the corporate site in an hour or so during a talk on CSS grid

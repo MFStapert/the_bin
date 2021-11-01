@@ -1,1 +1,0 @@
-Refactoring kata for Avisi tech day
