@@ -1,0 +1,141 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+ @import url(https://fonts.googleapis.com/css?family=Lato);
+ @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
+ .footer-social-icons {
+     width: 350px;
+     display:block;
+     margin: 0 auto;
+ }
+ .social-icon {
+     color: #fff;
+ }
+ ul.social-icons {
+     margin-top: 10px;
+ }
+ .social-icons li {
+     vertical-align: top;
+     display: inline;
+     height: 100px;
+ }
+ .social-icons a {
+     color: #fff;
+     text-decoration: none;
+ }
+ .fa-facebook {
+     -o-transition:.5s;
+     -ms-transition:.5s;
+     -moz-transition:.5s;
+     -webkit-transition:.5s;
+     transition: .5s;
+     background-color: #3b5998;
+ }
+ .fa-facebook:hover {
+     background-color: #3d5b99;
+ }
+ .fa-twitter {
+     -o-transition:.5s;
+     -ms-transition:.5s;
+     -moz-transition:.5s;
+     -webkit-transition:.5s;
+     transition: .5s;
+     background-color: #55acee;
+ }
+ .fa-twitter:hover {
+     background-color: #00aced;
+ }
+
+ .fa-linkedin {
+     -o-transition:.5s;
+     -ms-transition:.5s;
+     -moz-transition:.5s;
+     -webkit-transition:.5s;
+     transition: .5s;
+     background-color: #007bb6;
+ }
+ .fa-linkedin:hover {
+     background-color: #0073a4;
+ }
+ .fa-google-plus {
+     padding:10px 9px;
+     -o-transition:.5s;
+     -ms-transition:.5s;
+     -moz-transition:.5s;
+     -webkit-transition:.5s;
+     transition: .5s;
+     background-color: #322f30;
+ }
+ .fa-google-plus:hover {
+     background-color: #e25714;
+ }
+
+nav ul a,
+nav .brand-logo {
+  color: #444;
+}
+
+p {
+  line-height: 2rem;
+}
+
+.button-collapse {
+  color: #26a69a;
+}
+
+.parallax-container {
+  min-height: 380px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+  .parallax-container .section {
+    width: 100%;
+  }
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+footer.page-footer {
+  margin: 0;
+}
+
+.carousel .carousel-item {
+width:600px !important;
+}
+
+.contact-modal {
+position: fixed;
+right:1%;
+top:8%;
+font-size: 30px;
+}
+
+#carousel-row {
+  margin-bottom: 2vw;
+}

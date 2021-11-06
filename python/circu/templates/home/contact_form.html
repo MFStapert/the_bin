@@ -1,0 +1,28 @@
+<!-- Modal Trigger -->
+<a class="btn-floating btn-large red waves-effect modal-trigger waves-light contact-modal" href="#modal1"><i class="material-icons">contact_mail</i></a>
+
+
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+  <div class="modal-content">
+  <div class="row">
+    <form action="this.php" method="post" class="col s12">
+        <input placeholder="adres@email.domein" name="email" type="text" class="validate" required>
+        <input placeholder="Naam/Bedrijfsnaam" name="name" type="text" class="validate" required>
+    </div>
+
+  <div class="row">
+    <div class="input-field col s12">
+       <textarea placeholder="Dit veld is niet verplicht" name="message" class="materialize-textarea"></textarea>
+       <label for="message">Bericht</label>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <button class="btn waves-effect waves-light red" type="submit" name="action">Submit
+      <i class="material-icons right">send</i>
+    </button>
+  </div>
+  </form>
+</div>
+</div>
