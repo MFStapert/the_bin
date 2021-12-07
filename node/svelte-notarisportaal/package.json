@@ -1,0 +1,38 @@
+{
+  "name": "svelte-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "start": "sirv public -s --no-clear --port 4200",
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "generate": "rm -rf generated && npx openapi-generator-cli generate"
+  },
+  "devDependencies": {
+    "@openapitools/openapi-generator-cli": "^2.4.12",
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-node-resolve": "^11.0.0",
+    "@rollup/plugin-typescript": "^8.0.0",
+    "@tsconfig/svelte": "^2.0.0",
+    "keycloak-js": "^13.0.1",
+    "prettier": "^2.4.1",
+    "prettier-plugin-svelte": "^2.4.0",
+    "rollup": "^2.3.4",
+    "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-scss": "^2.6.1",
+    "rollup-plugin-svelte": "^7.0.0",
+    "rollup-plugin-terser": "^7.0.0",
+    "sass": "^1.43.2",
+    "svelte": "^3.0.0",
+    "svelte-check": "^2.0.0",
+    "svelte-preprocess": "^4.0.0",
+    "svelte-router-spa": "^6.0.3",
+    "tslib": "^2.0.0",
+    "typescript": "^4.0.0",
+    "yup": "^0.32.11"
+  },
+  "dependencies": {
+    "sirv-cli": "^1.0.0"
+  }
+}
