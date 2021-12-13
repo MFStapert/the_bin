@@ -5,11 +5,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home.component';
 import { AboutComponent } from './about.component';
-import { FormDirective } from './form/form.directive';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HasFormChangedDirective } from './form/has-form-changed.directive';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, AboutComponent, FormDirective],
+  declarations: [
+    HasFormChangedDirective,
+    AppComponent,
+    HomeComponent,
+    AboutComponent,
+  ],
+  exports: [HasFormChangedDirective],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { FormService } from './form/form.service';
 
 @Component({
   selector: 'app-about',
   template: `
     <h1>about</h1>
-    <form [formGroup]="form" [appForm]="form">
+    <form [formGroup]="form" [hasFormChanged]="form">
       <input formControlName="input" />
     </form>
   `,
