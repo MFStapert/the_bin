@@ -1,1 +1,1 @@
-Experiment to see how one would implement unit testing, component testing and e2e testing in svelte
+Experiment to see how one would implement unit testing, component testing and e2e testing in svelte.

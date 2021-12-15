@@ -1,1 +1,1 @@
-First go at a todo app in svelte
+First go at a todo app in svelte.
