@@ -1,0 +1,28 @@
+version: '3.1'
+
+services:
+  mongo:
+    image: mongo
+    restart: always
+    ports:
+      - 27017:27017
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    links:
+      - mongo
+    environment:
+      ME_CONFIG_MONGODB_URL: mongodb://mongo:27017/
+  mongo-bootstrap:
+    image: rtsp/mongosh
+    links:
+      - mongo
+    volumes:
+      - './scripts:/scripts'
+    entrypoint: mongosh mongodb://mongo:27017 scripts/bootstrapDB.js
+  pdfserver:
+    build: ./pdfserver
+    network_mode: host
+    entrypoint: node index.js
