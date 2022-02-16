@@ -1,0 +1,1 @@
+Simple layout with darkmode
