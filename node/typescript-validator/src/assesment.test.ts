@@ -1,7 +1,8 @@
 import { validate } from "./index";
+import { Schema } from "./models";
 
 describe("bars", () => {
-  const barSchema = {
+  const barSchema: Schema = {
     name: 'string',
     address: 'string',
     drinks: 'object',
@@ -29,7 +30,7 @@ describe("bars", () => {
 });
 
 describe("bars", () => {
-  const carSchema = {
+  const carSchema: Schema = {
     brand: 'string',
     type: 'string',
     milage: 'number',
@@ -49,7 +50,6 @@ describe("bars", () => {
   
   it('Should validate false', () => {
     expect(validate({
-      ,
           type: '335',
           milage: '100000', // < No number
           extras: [
@@ -61,7 +61,7 @@ describe("bars", () => {
 });
 
 describe("persons", () => {
-  const personSchema = {
+  const personSchema: Schema = {
     name: 'string',
     age: 'number',
     siblings: 'array',
