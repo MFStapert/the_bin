@@ -1,0 +1,32 @@
+{
+    "name": "typescript-validator",
+    "version": "1.0.0",
+    "description": "A typescript library for validating objects based on a simple schema",
+    "main": "index.ts",
+    "scripts": {
+      "build": "tsc",
+      "test": "jest --watchAll"
+    },
+    "devDependencies": {
+      "@types/jest": "27.5.2",
+      "eslint": "8.11.0",
+      "jest": "27.5.1",
+      "ts-jest": "27.1.5",
+      "ts-node": "10.4.0",
+      "typescript": "4.7.4"
+    },
+    "jest": {
+      "roots": [
+        "<rootDir>/src"
+      ],
+      "transform": {
+        "^.+\\.(ts)$": "ts-jest"
+      },
+      "globals": {
+        "ts-jest": {
+          "tsconfig": "tsconfig.json"
+        }
+      }
+    }
+  }
+  
