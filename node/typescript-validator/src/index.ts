@@ -1,5 +1,5 @@
 import { Schema } from "./models";
 
-export const validate = (object: unknown, schema: Schema): boolean => {    
+export const validate = (obj: unknown, schema: Schema): boolean => {
     return false;
 };
