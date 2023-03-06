@@ -1,3 +1,3 @@
-export const start = () => console.log("Hello, World!");
-
-start();
+export const validate = (object: unknown, schema: unknown): boolean => {
+    return false;
+};

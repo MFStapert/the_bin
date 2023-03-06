@@ -1,9 +1,7 @@
-import { start } from "./index";
+import { validate } from "./index";
 
-describe("start", () => {
-  it('Should log "Hello, World!"', () => {
-    const consoleSpy = jest.spyOn(console, "log");
-    start();
-    expect(consoleSpy).toHaveBeenCalledWith("Hello, World!");
+describe("validate", () => {
+  it('should return true', () => {
+    expect(validate(null, null)).toBe(true);
   });
 });
