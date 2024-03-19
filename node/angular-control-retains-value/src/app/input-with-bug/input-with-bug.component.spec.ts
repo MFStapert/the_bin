@@ -52,8 +52,13 @@ describe('InputWithBugComponent', () => {
 
   it('value is not set on native element, even though property is bound to input', () => {
     component.form.setValue({ bug: 'hi' });
+    fixture.detectChanges()
+
+    // value is set on component
     const elementWithBug = component.elementWithBug();
     expect(elementWithBug?.value).toEqual('hi')
+
+    // native input element does not have it's value changed
     const nativeElement = component.nativeElement()?.nativeElement;
     expect(nativeElement?.value).toEqual('hi')
   });

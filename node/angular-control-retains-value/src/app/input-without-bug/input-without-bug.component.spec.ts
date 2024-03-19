@@ -47,6 +47,9 @@ describe('InputWithoutBugComponent', () => {
 
   it('value is set on input', () => {
     component.form.setValue({ nobug: 'hi' });
+    fixture.detectChanges()
+
+    // weirdly value is not set on element, even though it is set when used the app
     const nativeElement = component.nativeElement()?.nativeElement;
     expect(nativeElement?.value).toEqual('hi')
   });
