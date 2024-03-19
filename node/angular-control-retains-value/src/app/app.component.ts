@@ -1,8 +1,8 @@
 import {Component, inject} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {FormBuilder, ReactiveFormsModule} from "@angular/forms";
-import {InputWithBugComponent} from "./input-with-bug/input-with-bug.component";
-import {InputWithoutBugComponent} from "./input-without-bug/input-without-bug.component";
+import {InputRetainsComponent} from "./input-retains/input-retains.component";
+import {InputFixedComponent} from "./input-fixed/input-fixed.component";
 import {JsonPipe} from "@angular/common";
 
 @Component({
@@ -11,19 +11,19 @@ import {JsonPipe} from "@angular/common";
   imports: [
     RouterOutlet,
     ReactiveFormsModule,
-    InputWithBugComponent,
-    InputWithoutBugComponent,
+    InputRetainsComponent,
+    InputFixedComponent,
     JsonPipe
   ],
   template: `
     <form [formGroup]="form">
-      <input formControlName="nativeElement" placeholder="Native" />
+      <input formControlName="native" placeholder="Native" />
       <br>
       <br>
-      <app-input-with-bug formControlName="withBug" placeholder="Bug"></app-input-with-bug>
+      <app-input-retains formControlName="retains" placeholder="Retains"></app-input-retains>
       <br>
       <br>
-      <app-input-without-bug formControlName="withoutBug" placeholder="Fixed"></app-input-without-bug>
+      <app-input-fixed formControlName="fixed" placeholder="Fixed"></app-input-fixed>
       <br>
       <br>
       <button (click)="form.reset()">Clear Input</button>
@@ -41,8 +41,8 @@ export class AppComponent {
   fb = inject(FormBuilder);
   form = this.fb.nonNullable.group({
       nativeElement: [''],
-      withBug: [''],
-      withoutBug: [''],
+      retains: [''],
+      fixed: [''],
     }
   )
 }

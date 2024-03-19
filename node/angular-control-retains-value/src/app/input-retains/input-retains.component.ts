@@ -1,31 +1,37 @@
-import {Component, ElementRef, forwardRef, input, viewChild} from '@angular/core';
+import {ChangeDetectorRef, Component, forwardRef, inject, input} from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
 
 @Component({
-  selector: 'app-input-without-bug',
+  selector: 'app-input-retains',
   standalone: true,
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => InputWithoutBugComponent),
+      useExisting: forwardRef(() => InputRetainsComponent),
       multi: true,
     },
   ],
   template: `
     <input
-      #inputRef
       [placeholder]="placeholder()"
       [disabled]="isDisabled"
+      [value]="value"
       (input)="onChange($event)"
       (blur)="touched()"
     />`,
 })
-export class InputWithoutBugComponent implements ControlValueAccessor {
+export class InputRetainsComponent implements ControlValueAccessor   {
   placeholder = input<string>('');
-  inputRef = viewChild<ElementRef>('inputRef');
+  changeDetectorRef = inject(ChangeDetectorRef);
+
+  value: string = '';
   isDisabled: boolean = false;
   changed!: (value: any) => void;
   touched!: () => void;
+
+  writeValue(value: string): void {
+    this.value = value;
+  }
 
   registerOnChange(fn: any): void {
     this.changed = fn;
@@ -33,11 +39,6 @@ export class InputWithoutBugComponent implements ControlValueAccessor {
 
   registerOnTouched(fn: any): void {
     this.touched = fn;
-  }
-
-  writeValue(value: string): void {
-    const ref = this.inputRef();
-    ref && (ref.nativeElement.value = value);
   }
 
   setDisabledState(isDisabled: boolean): void {

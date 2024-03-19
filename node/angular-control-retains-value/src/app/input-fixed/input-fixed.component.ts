@@ -1,37 +1,31 @@
-import {ChangeDetectorRef, Component, forwardRef, inject, input} from '@angular/core';
+import {Component, ElementRef, forwardRef, input, viewChild} from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
 
 @Component({
-  selector: 'app-input-with-bug',
+  selector: 'app-input-fixed',
   standalone: true,
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => InputWithBugComponent),
+      useExisting: forwardRef(() => InputFixedComponent),
       multi: true,
     },
   ],
   template: `
     <input
+      #inputRef
       [placeholder]="placeholder()"
       [disabled]="isDisabled"
-      [value]="value"
       (input)="onChange($event)"
       (blur)="touched()"
     />`,
 })
-export class InputWithBugComponent implements ControlValueAccessor   {
+export class InputFixedComponent implements ControlValueAccessor {
   placeholder = input<string>('');
-  changeDetectorRef = inject(ChangeDetectorRef);
-
-  value: string = '';
+  inputRef = viewChild<ElementRef>('inputRef');
   isDisabled: boolean = false;
   changed!: (value: any) => void;
   touched!: () => void;
-
-  writeValue(value: string): void {
-    this.value = value;
-  }
 
   registerOnChange(fn: any): void {
     this.changed = fn;
@@ -39,6 +33,11 @@ export class InputWithBugComponent implements ControlValueAccessor   {
 
   registerOnTouched(fn: any): void {
     this.touched = fn;
+  }
+
+  writeValue(value: string): void {
+    const ref = this.inputRef();
+    ref && (ref.nativeElement.value = value);
   }
 
   setDisabledState(isDisabled: boolean): void {
