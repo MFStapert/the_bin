@@ -1,4 +1,4 @@
-import {Component, forwardRef, input} from '@angular/core';
+import {ChangeDetectorRef, Component, forwardRef, inject, input} from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
 
 @Component({
@@ -20,8 +20,9 @@ import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
       (blur)="touched()"
     />`,
 })
-export class InputWithBugComponent implements ControlValueAccessor {
+export class InputWithBugComponent implements ControlValueAccessor   {
   placeholder = input<string>('');
+  changeDetectorRef = inject(ChangeDetectorRef);
 
   value: string = '';
   isDisabled: boolean = false;
